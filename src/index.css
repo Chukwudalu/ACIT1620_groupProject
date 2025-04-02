@@ -1,0 +1,22 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root{
+  --primary-color: #0d1b2a;
+  --components-color-1: #ffbd00;
+  --components-color-2: #f18701;
+  --components-color-3: #f48c06;
+  --color-white: #ffffff;
+  --color-black: #000000;
+}
+
+.body{
+  font-family: "JetBrains Mono", monospace;
+}
+
+h1{
+  font-size: 30px;
+}

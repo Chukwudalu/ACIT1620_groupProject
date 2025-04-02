@@ -1,0 +1,18 @@
+:root{
+    --primary-color: #0d1b2a;
+    --components-color-1: #ffbd00;
+    --components-color-2: #f18701;
+    --components-color-3: #f48c06;
+    --color-white: #ffffff;
+    --color-black: #000000;
+  }
+  
+
+
+.chart{
+    background-color: var(--color-black);
+    border-radius: 20px;
+    margin-top: 20px;
+    padding: 20px;
+    color: var(--color-white);
+}

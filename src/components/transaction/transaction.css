@@ -1,0 +1,99 @@
+
+:root{
+    --primary-color: #0d1b2a;
+    --components-color-1: #ffbd00;
+    --components-color-2: #f18701;
+    --components-color-3: #f48c06;
+    --color-white: #ffffff;
+    --color-black: #000000;
+
+}
+
+
+
+
+.transaction{
+    width: 100%;
+    min-height: 100vh;
+    /* margin: 20px auto; */
+    padding: 30px;
+    background-color: var(--color-black);
+}
+
+.transaction_header{
+    color: var(--color-white);
+    margin-bottom: 20px;
+}
+
+.transaction_container label{
+    display: block;
+    color: var(--color-white);
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.transaction_container:first-of-type {
+    margin-bottom: 30px;
+}
+
+.transaction_container input{
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-bottom: 2px solid var(--color-white);
+    background: none;
+    outline: none;
+    color: var(--color-white);
+    font-size: 16px;
+}
+
+.transaction_container input:focus{
+    background: var(--color-white);
+    color: var(--color-black);
+}
+
+.transaction_container select {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-bottom: 2px solid var(--color-white);
+    background: none;
+    outline: none;
+    color: var(--color-white);
+    font-size: 16px;
+    cursor: pointer;
+    appearance: none; /* Removes default dropdown arrow (for custom styling) */
+}
+
+/* Add custom dropdown arrow */
+.transaction_container select {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='white'><path d='M5 7l5 5 5-5'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 12px;
+    padding-right: 30px; /* Ensure space for the arrow */
+}
+
+/* Change background on focus */
+.transaction_container select:focus {
+    background: var(--color-white);
+    color: var(--color-black);
+}
+
+.transaction_button{
+    width: 100%;
+    padding: 15px 40px;
+    border: none;
+    outline: none;
+    margin-top: 50px;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: var(--components-color-1);
+    border-radius: 20px;
+}
+
+p{
+    color: var(--color-white);
+}
+
