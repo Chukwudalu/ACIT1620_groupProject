@@ -1,0 +1,169 @@
+:root {
+    --primary-color: rgba(99, 168, 255, 0.8);
+    --primary-hover: rgba(99, 168, 255, 0.9);
+    --primary-glow: 0 0 15px rgba(99, 168, 255, 0.3);
+    --secondary-color: #6c757d;
+    --success-color: #28a745;
+    --background-color: #f8f9fa;
+    --white: #ffffff;
+    --gray-100: #f8f9fa;
+    --gray-200: #e9ecef;
+    --gray-300: #dee2e6;
+    --gray-400: #ced4da;
+    --gray-500: #adb5bd;
+    --gray-600: #6c757d;
+    --gray-700: #495057;
+    --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    --glass-background: rgba(255, 255, 255, 0.7);
+    --glass-border: rgba(255, 255, 255, 0.2);
+    --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+}
+
+.auth {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--background-color);
+    padding: 20px;
+}
+
+.auth_body {
+    background: var(--glass-background);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 16px;
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+    width: 100%;
+    max-width: 400px;
+}
+
+.auth_body h1 {
+    color: var(--gray-700);
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: -0.025em;
+}
+
+/* Form field container */
+.form-field {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+/* Input styling */
+.form-field input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid var(--gray-200);
+    border-radius: 8px;
+    font-size: 0.875rem;
+    background: rgba(255, 255, 255, 0.9);
+    transition: all 0.2s ease;
+    outline: none;
+    color: var(--gray-800);
+}
+
+/* Floating label */
+.form-field label {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    padding: 0 4px;
+    color: var(--gray-500);
+    font-size: 0.875rem;
+    transition: all 0.2s ease;
+    pointer-events: none;
+}
+
+/* Move label up when input is focused or has content */
+.form-field input:focus ~ label,
+.form-field input:not(:placeholder-shown) ~ label {
+    top: 0;
+    transform: translateY(-50%) scale(0.9);
+    background: white;
+    color: var(--primary-color);
+}
+
+/* Input focus styles */
+.form-field input:focus {
+    border-color: var(--primary-color);
+    box-shadow: var(--primary-glow);
+}
+
+/* Remove old input and label styles */
+.auth_body_username,
+.auth_body_password {
+    display: none;
+}
+
+.auth_body button {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.auth_body button:hover {
+    background-color: var(--primary-hover);
+    box-shadow: var(--primary-glow);
+    transform: translateY(-1px);
+}
+
+.auth_body p {
+    margin-top: 20px;
+    text-align: center;
+    color: var(--gray-600);
+}
+
+.auth_body a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.auth_body a:hover {
+    color: var(--primary-hover);
+    text-shadow: var(--primary-glow);
+}
+
+/* Add labels */
+.auth_body label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--gray-700);
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+/* Add placeholder styles */
+.auth_body input::placeholder {
+    color: var(--gray-400);
+    opacity: 0.8;
+}
+
+/* Add error state */
+.auth_body input.error {
+    border-color: #dc3545;
+}
+
+/* Add loading state for button */
+.auth_body button:disabled {
+    background-color: var(--gray-400);
+    cursor: not-allowed;
+}

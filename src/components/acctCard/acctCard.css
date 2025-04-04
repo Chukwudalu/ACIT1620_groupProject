@@ -1,0 +1,37 @@
+.credit-card {
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(135deg, #cad2e3, #abbef0);
+    border-radius: 15px;
+    color: white;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-family: Arial, sans-serif;
+    position: relative;
+    margin-bottom: 20px;
+}
+.chip {
+    width: 50px;
+    height: 35px;
+    background: gold;
+    border-radius: 5px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+.card-number {
+    font-size: 22px;
+    letter-spacing: 2px;
+    margin-top: 70px;
+}
+.card-holder {
+    font-size: 14px;
+    margin-top: 20px;
+    text-transform: uppercase;
+}
+.expiry {
+    font-size: 14px;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}

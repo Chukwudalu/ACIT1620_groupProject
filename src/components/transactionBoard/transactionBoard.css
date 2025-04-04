@@ -1,0 +1,103 @@
+:root {
+    --primary-color: #0d1b2a;
+    --components-color-1: #ffbd00;
+    --components-color-2: #f18701;
+    --components-color-3: #f48c06;
+    --color-white: #ffffff;
+    --color-black: #000000;
+    --white: #ffffff;
+    --gray-600: #6b7280;
+    --gray-100: #f3f4f6;
+    --background-color: #ffffff;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --gray-300: #d1d5db;
+    --gray-400: #9ca3af;
+}
+
+.transactionboard {
+    background-color: var(--white);
+    color: var(--gray-600);
+    min-height: 400px;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+}
+
+/* Match heading style with other sections */
+.transactionboard h2 {
+    color: var(--gray-800);
+    margin-bottom: 20px;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.balance {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: var(--gray-100);
+    border-radius: 8px;
+    min-height: 60px;
+}
+
+.balance p {
+    margin: 0;
+    font-size: 0.875rem;
+    color: var(--gray-700);
+    font-weight: 500;
+}
+
+.all_transactions {
+    background-color: var(--background-color);
+    height: 300px;
+    padding: 15px;
+    border-radius: 8px;
+    overflow-y: auto;
+}
+
+.trans {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 12px;
+    background-color: var(--white);
+    border-radius: 6px;
+    transition: transform 0.2s ease;
+}
+
+.trans:hover {
+    transform: translateX(5px);
+}
+
+.trans p {
+    margin: 0;
+    color: var(--gray-700);
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+/* Scrollbar styling */
+.all_transactions::-webkit-scrollbar {
+    width: 8px;
+}
+
+.all_transactions::-webkit-scrollbar-track {
+    background: var(--gray-100);
+    border-radius: 4px;
+}
+
+.all_transactions::-webkit-scrollbar-thumb {
+    background: var(--gray-300);
+    border-radius: 4px;
+}
+
+.all_transactions::-webkit-scrollbar-thumb:hover {
+    background: var(--gray-400);
+}
+
+ul {
+    color: var(--color-white);
+}
