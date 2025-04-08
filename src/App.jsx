@@ -11,7 +11,10 @@ import Transactions from './pages/transcations/transactions';
 import Auth from './pages/auth/auth';
 import Header from './components/header/header';
 import Footer from './components/footer/footer';
-  
+
+
+
+
 function App() {
     return (
         <Router>

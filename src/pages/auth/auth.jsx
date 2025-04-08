@@ -10,6 +10,9 @@ const Auth = () => {
     const location = useLocation()
     let type = location.pathname
 
+    
+
+
     const handleRegister = () => {
         let user = {
             username: username,
@@ -20,32 +23,30 @@ const Auth = () => {
         }
         
         localStorage.setItem('user', JSON.stringify(user))
+
+
         login(user.username, user.balance, user.transactions, user.isLoggedIn)
         return navigate('/')
     }
 
     const handleLogin = () => {
-        // Check if the user is has an account. If the user is registered, the data will be in the localstorage
-        let user = JSON.parse(localStorage.getItem('user'))
-        
-        if (!user){
-            return alert('no user data exists. Please create an account')
-        } 
-        
-        // If the user does not have a account, the user is prompted to try again
-        try {
-            if (user.username != username || user.password != password){
-                throw new Error('Incorrect username or password')
-            }
-        } catch (error) {
-            return alert(error)
-        }
 
-        // If the login info is correct, the user data is saved to state and user is rerouted to home page
-        let isLoggedIn = true
-        login(user.username, user.balance, user.transactions, isLoggedIn)
-        localStorage.setItem('user', JSON.stringify({...user, isLoggedIn}))
-        return navigate('/')
+        try {
+            let user = JSON.parse(localStorage.getItem('user'))
+            
+            if(user.username != username || user.password != password){
+                return alert("Incorrect username or password")
+            }
+
+            user.isLoggedIn = true
+            localStorage.setItem('user', JSON.stringify(user))
+            login(user.username, user.balance, user.transactions, user.isLoggedIn)
+            return navigate('/')
+        } catch (error) {
+            console.log(error)
+            alert("An error occured. Check console for details")
+        }
+        
     }
 
     return(

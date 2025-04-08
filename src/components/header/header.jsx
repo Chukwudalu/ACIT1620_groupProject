@@ -3,13 +3,13 @@ import './header.css'
 import { Link, useNavigate } from "react-router-dom";
 import useBankStore from '../../store/bankStore';
 function Header() {
-    const { isLoggedin, logout } = useBankStore()
+    const { isLoggedIn, logout } = useBankStore()
     const navigate = useNavigate()
 
     const handleLogout = () => {
-        logout()
         let user = JSON.parse(localStorage.getItem("user"))
         localStorage.setItem('user', JSON.stringify({...user, isLoggedIn: false}))
+        logout()
     }
 
     

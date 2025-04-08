@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './transaction.css'
 import useBankStore from '../../store/bankStore'
 import { useLocation} from 'react-router-dom'
