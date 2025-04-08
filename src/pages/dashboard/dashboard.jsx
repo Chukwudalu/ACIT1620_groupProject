@@ -6,20 +6,33 @@ import useBankStore from '../../store/bankStore'
 
 function Dashboard() {
     const {transactions} = useBankStore()
-    const withdrawalchartData = transactions.filter(transaction => transaction.type == 'withdrawal')
-    const depositChartData = transactions.filter(transaction => transaction.type == 'deposit')
-    console.log(withdrawalchartData)
+    let user = JSON.parse(localStorage.getItem("user"))
+    const withdrawalchartData = transactions?.filter(transaction => transaction.type == 'withdrawal')
+    const depositChartData = transactions?.filter(transaction => transaction.type == 'deposit')
     return(
         <div className='dashboard'>
             <AcctCard/>
             <TransactionBoard />
             <div className="chart-section">
                 <h1>Spendings</h1>
-                <TransactionBarChart trans_data={withdrawalchartData}/>
+                {
+                    user?.isLoggedIn && (
+                        <>
+                            <TransactionBarChart trans_data={withdrawalchartData}/>
+                        </>
+                    )
+                }
             </div>
             <div className="chart-section">
                 <h1>Earnings</h1>
-                <TransactionBarChart trans_data={depositChartData}/>
+                {
+                    user?.isLoggedIn && (
+                        <>
+                            <TransactionBarChart trans_data={depositChartData}/>
+                        </>
+                    )
+                }
+                
             </div>
         </div>
     )

@@ -20,13 +20,14 @@ const Auth = () => {
         }
         
         localStorage.setItem('user', JSON.stringify(user))
-        login(user.username, user.balance, user.transactions)
+        login(user.username, user.balance, user.transactions, user.isLoggedIn)
         return navigate('/')
     }
 
     const handleLogin = () => {
         // Check if the user is has an account. If the user is registered, the data will be in the localstorage
         let user = JSON.parse(localStorage.getItem('user'))
+        
         if (!user){
             return alert('no user data exists. Please create an account')
         } 
@@ -39,8 +40,11 @@ const Auth = () => {
         } catch (error) {
             return alert(error)
         }
+
         // If the login info is correct, the user data is saved to state and user is rerouted to home page
-        login(user.username, user.balance, user.transactions)
+        let isLoggedIn = true
+        login(user.username, user.balance, user.transactions, isLoggedIn)
+        localStorage.setItem('user', JSON.stringify({...user, isLoggedIn}))
         return navigate('/')
     }
 
